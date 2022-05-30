@@ -1,2 +1,2 @@
 web: gunicorn mysite.wsgi
-web: gunicorn travel--places:app
+web: gunicorn ugc:app
