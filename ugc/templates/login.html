@@ -1,0 +1,41 @@
+{% extends 'ugc/base.html' %}
+{% load static %}
+
+
+    {% block head %}
+		
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		{% endblock %}
+
+    {% block content %}
+        <script src="{% static 'ugc/js/jquery-min.js' %}"></script>
+        <script src="{% static 'ugc/js/script.js' %}"></script>
+        <script src="{% static 'ugc/js/jquery.validate.min.js' %}"></script>
+        <script src="{% static 'ugc/js/bot_script.js' %}"></script>
+	<section>
+        <dev class="container">
+            <h2>Registration</h2>
+            <form action="" name="registration">
+ 
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname" id="firstname" placeholder="John"/>
+             
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" id="lastname" placeholder="Doe"/>
+             
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="john@doe.com"/>
+             
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;"/>
+             
+                <button type="submit" id="register_button">Register</button>
+             
+              </form>
+        </dev>
+	<section>
+
+
+		
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

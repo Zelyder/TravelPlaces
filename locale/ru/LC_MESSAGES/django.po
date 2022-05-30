@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-16 12:15+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: ugc/templates/ugc/base.html:29
+msgid "Направления"
+msgstr "Направления"
+
+#: ugc/templates/ugc/base.html:32
+msgid "Страны"
+msgstr "Страны"
+
+#: ugc/templates/ugc/base.html:33
+msgid "Острова"
+msgstr "Острова"
+
+#: ugc/templates/ugc/base.html:34
+msgid "Регионы"
+msgstr "Регионы"
+
+#: ugc/templates/ugc/base.html:38
+msgid "События"
+msgstr "События"
+
+#: ugc/templates/ugc/base.html:41
+msgid "О нас"
+msgstr "О нас"
+
+#: ugc/templates/ugc/base.html:44
+msgid "Обратная связь"
+msgstr "Обратная связь"
+
+#: ugc/templates/ugc/base.html:47
+msgid "Войти"
+msgstr "Войти"
+
+#: ugc/templates/ugc/base.html:51
+msgid "Язык"
+msgstr "Язык"
+
+#: ugc/templates/ugc/base.html:59
+msgid "Первый вход"
+msgstr "Первый вход"
+
+#: ugc/templates/ugc/index.html:10
+msgid "Добро пожаловать на TravelPlaces "
+msgstr "Добро пожаловать на TravelPlaces"
+
+#: ugc/templates/ugc/index.html:27
+msgid "Подробнее"
+msgstr "Подробнее"
+
+#~ msgid "Russia"
+#~ msgstr "Русский"
+
+#~ msgid "English"
+#~ msgstr "Английский"

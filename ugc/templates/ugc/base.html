@@ -1,0 +1,79 @@
+{% load static %}
+{% load static i18n %}
+
+<!doctype html>
+	<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="{% static 'ugc/css/style.css' %}">
+    {% block head %}
+    {% endblock %}
+		<title>{{title}}</title>
+	</head>
+  <body>
+    <script src="{% url 'javascript-catalog' %}"></script>
+        		<script src="{% static 'ugc/js/storage.js' %}"></script>
+    
+    {% block mainmenu %}
+      <header>
+		<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" >
+			<div class="container">
+				<a class="navbar-brand" href="{% url 'home' %}">TravelPlaces</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarsExample07">
+					<ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="" id="dropdown07" data-toggle="dropdown" aria-expanded="false">{% trans 'Направления' %}</a>
+							<ul class="dropdown-menu" aria-labelledby="dropdown07">
+								<li><a class="dropdown-item" href="{% url 'directions_city' %}"></a></li>
+								<li><a class="dropdown-item" href="#">{% trans 'Страны' %}</a></li>
+								<li><a class="dropdown-item" href="#">{% trans 'Острова' %}</a></li>
+								<li><a class="dropdown-item" href="#">{% trans 'Регионы' %}</a></li>
+							</ul>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'events' %}">{% trans 'События' %}</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'about' %}">{% trans 'О нас' %}</a>
+						</li>
+            <li class="nav-item">
+							<a class="nav-link" href="{% url 'feedback' %}">{% trans 'Обратная связь' %}</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'login' %}">{% trans 'Войти' %}</a>
+						</li>
+            <li class="nav-item">
+							<a class="nav-link" id="date">{% trans 'Первый вход' %}</a>
+						</li>
+					</ul>
+
+<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}">
+    <select name="language">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                {{ language.name_local }} ({{ language.code }})
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Go" id="langBtn">
+</form>
+				</div>
+			</div>
+		</nav>
+	</header>
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
+    		<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

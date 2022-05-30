@@ -1,0 +1,65 @@
+{% extends 'ugc/base.html' %}
+
+
+    {% block head %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+		{% endblock %}
+
+{% block content %}
+
+<section class="bg_img_section content_sectinon" style= "background-image: url(http://{{ request.get_host }}/{{post.cover_image}});">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="content_title">{{ post.title }}</h1>
+            </div>
+        </div>
+    </section>
+
+  <section>
+    <div class="container container_content">
+      <h2 style="text-align: center; margin: 0;"><strong>{{post.title }}</strong></h2>
+    </br>
+    <button id='like-btn' data-href="{% url 'like' post.pk %}" data-likes='{{post.likes.count}}' href="{% url 'like' post.pk %}">{{ post.likes.count }} Like </button>
+    <p>{{post.content|linebreaks}}</p>
+    </div>
+  </section>
+
+<div>
+   <div style="margin-left: 10px">
+   </div>
+  </div>
+  <hr>
+<script>
+$(document).ready(function(){  });
+  function updateText(btn, newCount, verb){
+    btn.textContent = newCount + " " + verb
+  }
+  var like_btn = document.getElementById("like-btn")
+  like_btn.onclick = function (e) {
+    console.log("like-btn")
+    var likeUrl = like_btn.dataset.href
+    var likeCount = parseInt(like_btn.dataset.likes)
+    $.ajax({
+      url: likeUrl,
+      method: "GET",
+      data: {},
+      success: function(data){
+        console.log(data)
+        if(data.liked) {
+          likeCount += 1;
+          like_btn.dataset.likes = likeCount;
+          updateText(like_btn, likeCount, "Unlike")
+        } else {
+          likeCount -= 1;
+          like_btn.dataset.likes = likeCount;
+          updateText(like_btn, likeCount, "Like")
+        }
+      }, error: function (error) {
+        console.log(error)
+        console.log("error")
+      }
+    })
+  }
+</script>
+{% endblock %}

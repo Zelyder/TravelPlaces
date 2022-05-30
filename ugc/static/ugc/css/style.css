@@ -1,0 +1,105 @@
+{% load static %}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+body {
+	margin: 0;
+	font-family: Arial;
+	line-height: 1.5;
+	font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+section {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.bg_img_section {
+	background-repeat: no-repeat; 
+	background-size:cover;
+	background-position: center center;
+	background-color: #8fb0ee;
+}
+
+.intro_section {
+	padding-top: 120px;
+	padding-bottom: 120px;
+	background-image: url(https://i.pinimg.com/originals/74/e2/1b/74e21bec1bf0b8b2272cf1ee3e11677c.png);
+}
+
+.about_section {
+	width: 100vw;
+	height: 100vh;
+	background-image: url(https://www.travelmeetshappy.com/wp-content/uploads/2017/09/Travellers-Movie-Wallpapers.jpg);
+	
+}
+
+.content_sectinon {
+	width: 100vw;
+	height: 80vh;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_content {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.container_content img{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.content_title {
+	color: #fff;
+	font-weight: bold;
+}
+
+.my_carousel .carousel-item {
+	height: 40em;
+}
+
+.my_carousel .carousel-item img {
+	object-fit: cover;
+}
+
+.sub_title {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.about_block {
+	margin-top: 3rem;
+}
+
+.row_margin {
+	margin-bottom: 2rem;
+}
+
+.header_title {
+	color: #fff;
+}
+
+.nav_li {
+	float: left;
+}
+
+.nav_link {
+	color: #fff;
+	display: block;
+	height:50px;
+	padding:0 30px;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height: 50px;
+}
+
+.nav_link:hover {
+	background: #d34d43;
+}

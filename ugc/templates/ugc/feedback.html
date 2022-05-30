@@ -1,0 +1,24 @@
+{% extends 'ugc/base.html' %}
+
+{% block content %}
+<section>
+  <div class="container">
+    <div class="row row_margin">
+            <h2>Обратная связь</h2>
+            <form action="{% url 'feedback' %}" method="post">
+
+              {% csrf_token %}
+
+              <div class="form-error">{{form.non_field_errors }}</div>
+              
+              {{ form.as_p }}
+                <button type="submit">Отправить</button>
+             
+              </form>
+      </div>
+  </div>
+</section>
+
+
+{% endblock %}
+
