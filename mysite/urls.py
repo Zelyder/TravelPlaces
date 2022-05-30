@@ -39,6 +39,7 @@ urlpatterns += i18n_patterns(
     path('jsi18n/', JavaScriptCatalog.as_view(), name='javascript-catalog'),
     path('', index, name='home'),
     path('admin/', admin.site.urls),
+    path('app/admin/', admin.site.urls),
     path('page/<int:page_id>/', page, name='page'),
     prefix_default_language=False
 )
