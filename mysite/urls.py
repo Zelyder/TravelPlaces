@@ -28,6 +28,7 @@ urlpatterns = [
     path('about/', about, name='about'),
     path('events/', events, name='events'),
     path('login/', login, name='login'),
+    path('admin', admin.site.urls),
     path('directions_city/', directions_city, name='directions_city'),
     path('feedback/', feedback, name='feedback'),
     re_path(r'^page/(?P<page_id>\d+)/like/$',PostLikeAPIToggle.as_view(),name='like'),
@@ -39,7 +40,6 @@ urlpatterns += i18n_patterns(
     path('jsi18n/', JavaScriptCatalog.as_view(), name='javascript-catalog'),
     path('', index, name='home'),
     path('admin/', admin.site.urls),
-    path('app/admin/', admin.site.urls),
     path('page/<int:page_id>/', page, name='page'),
     prefix_default_language=False
 )
