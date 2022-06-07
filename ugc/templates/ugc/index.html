@@ -20,7 +20,7 @@
       {% for p in row %}
       <div class="col-6">
 					<div class="card" >
-						<img src="{{p.thumbnail_image}}" class="card-img-top" alt="{{p.title}}" />
+						<img src="http://{{ request.get_host }}/{{p.thumbnail_image}}" class="card-img-top" alt="{{p.title}}" />
 						<div class="card-body">
 						  <h5 class="card-title">{{p.title}}</h5>
 						  <p class="card-text" >{{p.short_description|linebreaks}}</p>
